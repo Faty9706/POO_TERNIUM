@@ -1,5 +1,5 @@
 
-
+console.log("JS funcionando");
 function toggleMenu(){
   document.getElementById("sidebar").classList.toggle("hidden");
 }
