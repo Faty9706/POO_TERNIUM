@@ -52,7 +52,10 @@
   <button onclick="mostrar('dashboard')">Dashboard</button>
   <button onclick="mostrar('incidencia')">Registrar Incidencia</button>
   <button onclick="mostrarTablaIncidencias();mostrar('tablaInc')">Ver Incidencias</button>
-  <button onclick="mostrar('mantenimiento')">Registrar Mantenimiento</button>
+  <button onclick="
+mostrar('mantenimiento');
+cargarIncidencias();
+">
   <button onclick="mostrarTablaMantenimiento();mostrar('tablaMant')">Ver Mantenimientos</button>
 
   <li class="logout" onclick="cerrarSesion()">
