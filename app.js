@@ -1,15 +1,4 @@
-function login(){
-  const usuarioActivo = localStorage.getItem("usuarioActivo");
 
-if(!usuarioActivo){
-   document.getElementById("loginContainer").style.display="flex";
-   document.getElementById("appContainer").style.display="none";
-}else{
-   document.getElementById("loginContainer").style.display="none";
-   document.getElementById("appContainer").style.display="block";
-}
-  actualizarDashboard();
-}
 
 function toggleMenu(){
   document.getElementById("sidebar").classList.toggle("hidden");
@@ -21,30 +10,7 @@ function mostrar(id){
 }
 
 /* INCIDENCIAS */
-function guardarIncidencia(){
-  const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
 
-  const maquina = document.getElementById("maquina").value;
-  const descripcion = document.getElementById("descripcion").value;
-  const tipo = document.getElementById("tipo").value;
-  const area = document.getElementById("area").value;
-
-  const nuevaIncidencia = {
-    id: Date.now(),
-    maquina,
-    descripcion,
-    tipo,
-    area,
-    fecha: new Date().toLocaleDateString(),
-    responsable: usuario.nombre,
-    correoResponsable: usuario.correo
-  };
-
-  let incidencias = JSON.parse(localStorage.getItem("incidencias")) || [];
-  incidencias.push(nuevaIncidencia);
-
-  localStorage.setItem("incidencias", JSON.stringify(incidencias));
-}
 
 function mostrarTablaIncidencias(){
   function cargarIncidenciasEnMantenimiento(){
@@ -215,15 +181,19 @@ function login(){
   const correo = document.getElementById("correoLogin").value;
   const pass = document.getElementById("passLogin").value;
 
-  const user = usuarios.find(u => u.correo === correo && u.pass === pass);
+  const user = usuarios.find(
+    u => u.correo === correo && u.pass === pass
+  );
 
   if(!user){
     alert("Credenciales incorrectas");
     return;
   }
 
-  // Guardar sesión
-  localStorage.setItem("usuarioActivo", JSON.stringify(user));
+  localStorage.setItem(
+    "usuarioActivo",
+    JSON.stringify(user)
+  );
 
   entrarSistema();
 }
