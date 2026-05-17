@@ -306,3 +306,27 @@ function guardarMantenimiento(){
   mostrarTablaMantenimiento();
   actualizarDashboard();
 }
+function cargarIncidencias(){
+
+  const select =
+  document.getElementById("incidenciaMant");
+
+  // limpiar opciones
+  select.innerHTML =
+  `<option value="">Selecciona una incidencia</option>`;
+
+  // obtener incidencias guardadas
+  const incidencias =
+  JSON.parse(localStorage.getItem("incidencias")) || [];
+
+  incidencias.forEach(i => {
+
+    select.innerHTML += `
+      <option value="${i.descripcion}">
+        ${i.maquina} - ${i.descripcion}
+      </option>
+    `;
+
+  });
+
+}
