@@ -66,6 +66,8 @@ function guardarMantenimiento(){
 
   const maquina = document.getElementById("maquinaM").value;
   const descripcion = document.getElementById("descripcionM").value;
+  const incidencia =
+document.getElementById("incidenciaMant").value;
 
   const nuevoMantenimiento = {
     id: Date.now(),
