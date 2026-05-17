@@ -94,6 +94,7 @@ function mostrarTablaMantenimiento(){
     <td>${m.tipo}</td>
     <td>${m.fecha}</td>
     <td>${m.descripcion}</td>
+    <th>Incidencia</th>
     </tr>`;
   });
 }
