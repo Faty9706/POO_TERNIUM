@@ -54,11 +54,8 @@
   <button onclick="mostrarTablaIncidencias();mostrar('tablaInc')">Ver Incidencias</button>
   <button onclick="mostrar('mantenimiento')">Registrar Mantenimiento</button>
   <button onclick="mostrarTablaMantenimiento();mostrar('tablaMant')">Ver Mantenimientos</button>
-<td>${m.incidencia || "Sin incidencia"}</td>
-<td>${m.descripcion}</td>
-  <div class="logout" onclick="cerrarSesion()">
-  ⬅ Cerrar sesión
-</div>
+
+  <li class="logout" onclick="cerrarSesion()">
     ⬅ Cerrar sesión
   </li>
 
@@ -117,8 +114,7 @@
         <th>Ingeniero</th>
         <th>Máquina</th>
         <th>Fecha</th>
-        <th>Incidencia</th>
-<th>Descripción</th>
+        <th>Descripción</th>
       </tr>
     </thead>
 
@@ -133,11 +129,8 @@
   <input id="maqMant" placeholder="Máquina">
   <input id="tipoMant" placeholder="Tipo (Preventivo/Correctivo)">
   <input id="fechaMant" type="date">
-  <select id="incidenciaRelacionada">
-  <option value="">Selecciona una incidencia</option>
-</select>
+  <textarea id="descMant" placeholder="Descripción"></textarea>
 
-<textarea id="descMant" placeholder="Descripción del mantenimiento"></textarea>
   <button onclick="guardarMantenimiento()">Guardar</button>
 </div>
 
